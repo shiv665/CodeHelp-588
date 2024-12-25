@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHelp</title>
+    <link rel="icon" href="1 (6).png" type="image/png">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.fader{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    animation: fadeAndGrow 2s 1 linear ;
+
+}
+
+@keyframes fadeAndGrow {
+    0% {
+      opacity: 0;           /* Start fully transparent */
+      transform: scale(1); /* Start small */
+    }
+    50% {
+      opacity: 1;           /* Fully visible */
+      transform: scale(2); /* Grow larger */
+
+    }
+    100% {
+
+        opacity: 0;;           /* End fully transparent */
+       transform: scale(6); /* Grow even larger */
+    }
+  }
+
+.header_container{
+    
+    width: 100%;
+    height: 4rem;
+    /* border: 1.5px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_box{ 
+
+    width: 80%;
+    height: 100%;
+    /* border: 1.5px solid white; */
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo_box, .nav_box, .login_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    margin-left: 0rem;
+}
+.vid{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+}
+.logo_box{
+    gap: 0.2rem;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+}
+.nav_div{
+    height: 1.5px;
+    width: 95%;
+    background-color: blue;
+    opacity: 0;
+    transition: all 0 3s linear;
+    position: absolute;
+    top:100%;
+}
+.nav:hover{
+    .nav_div{
+        opacity: 1;
+
+    }
+    .nav_text{
+        color: rgb(234, 113, 113);
+    }
+}
+
+
+.logo_text_heading{
+    font-size: 1.7rem;
+    background: linear-gradient(to right, rgb(233, 225, 225), rgb(244, 242, 239), rgb(88, 135, 228), rgb(160, 12, 235));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; 
+}
+
+.login_box{
+
+    position: relative;
+    
+    border: 1.5px solid red;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem red;
+    transition: all 0 3s linear ;
+
+}
+.login_box:hover{
+    transform: scale(1.1);
+}
+.menu_box{
+    
+    
+    top: 0.6rem;
+    display: none;
+    height: 3rem;
+    width: 4rem; 
+    
+}
+.menu_img{
+    height: 3rem;
+    width: 4rem;  
+ }
+ @media(max-width:720px){
+    .header_box{
+        position: relative;
+    }
+
+    .menu_box{
+        position: absolute;
+     left: 88%;   
+    display: block;
+    }
+
+
+    .nav_box,.login_box{
+        display: none;
+    }
+    
+}
+
+.intro_container{
+    
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    /* border: 1.5px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.intro_box{
+    margin: 4rem;
+    width: 80%;
+    height: auto;
+    /* border: 1.5px solid white; */
+    display: flex;
+    justify-content: space-between;
+    background-image: url('21.jpg');
+    z-index: 1;
+}
+.boy_box, .girl_box{
+    width: 25%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boy,.girl{
+    height: 25rem;
+    animation: abcd 1s linear 0s infinite;
+    
+}
+@keyframes abcd {
+    0% {
+        transform: scale(1); /* Starting size */
+    }
+    50% {
+        transform: scale(1.01); /* Enlarged size */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+
+.ima{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    box-shadow: 0 0 1rem rgb(231, 49, 212);
+
+}
+
+
+@media(max-width:700px){
+    .intro_box{
+        margin: 0;
+    }
+}
+@media(max-width:550px){
+    .boy_box{
+        display: none;
+    }
+    .intro_content_box{
+        height: 25rem;
+    }
+}
+.intro_content_box{
+
+    position: relative;
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+
+}
+.img1 {
+    top: 0;
+    left: 0;
+    animation: chalo1 3s linear 0s infinite alternate-reverse ;
+}
+
+.img2 {
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%); /* Ensure it stays inside */
+    animation: chalo2 3s linear 0s infinite alternate-reverse;
+}
+
+.img3 {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%); /* Keep it within bounds */
+    animation: chalo3 3s linear 0s infinite alternate-reverse;
+}
+
+.img4 {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%); /* Keep it within bounds */
+    animation: chalo4 3s linear 0s infinite alternate-reverse;
+}
+
+
+@keyframes chalo1 {
+    0% {
+        top: 30%;
+        left: 0%;
+    }
+    100% {
+        top:40%;
+        left: 0%;
+}
+}
+@keyframes chalo2 {
+    0% {
+        top:30%;
+        left: 100%;
+    }
+    100% {
+        top: 40%;
+        left: 100%;
+    }
+    
+    }
+
+@keyframes chalo3 {
+    100% {
+        top: 55%;
+        left: 100%;
+    }
+    0% {
+        top: 65%;
+        left:100%;
+    }
+}
+
+@keyframes chalo4 {
+    100% {
+        top: 55%;
+        left: 0%;
+    }
+    0% {
+        top: 65%;
+        left: 0%;
+    }
+}
+
+.intro_content_text{
+    height: 80%;
+    text-align: start;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.intro_heading{
+
+    font-size: 2rem;
+    background: linear-gradient(to right, rgb(194, 157, 157), rgb(216, 162, 81), rgb(183, 222, 177), rgb(160, 12, 235));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; 
+
+    
+}
+@media(max-width:505px){
+    .intro_content_box, .intro_content_text,.intro_container{
+        margin: 0;
+        padding: 0;
+    }
+}
+.intro_heading2{
+    font-size: 1.5rem;
+}
+.Course_button{
+    border: 1.5px solid blue;
+    padding: 0.5rem;
+    border-radius: 1rem; 
+    box-shadow: 0 0 1rem blue;
+    text-align: center;
+}
+.Course_button:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.Watch_button:hover{
+    color: black;
+}
+.Watch_button{
+    margin-left: 1rem;
+    border: 1.5px solid rgb(224, 18, 18);
+    padding: 0.5rem; 
+    border-radius: 1rem; 
+    box-shadow: 0 0 1rem red;
+    background-color: red ;
+    text-align: center;
+}
+.dabba{
+    display: flex;
+
+} 
+
+/* Make the cursor blink */
+.typed-cursor {
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+ 
+  
+
+  .grid_container{
+    
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    /* border: 1.5px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.grid_box{
+    width: 80%;
+    height: auto;
+    /* border: 1.5px solid white; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-image: url('21.jpg');
+    z-index: 1;
+    justify-items: center;
+    align-content: center;
+    gap: 2rem;
+}
+.dibbi{
+    position: relative;
+    height: 5rem;
+    width: 20rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    
+    /* border: 1.5px solid linear-gradient(to right, green,blue); */
+    background-color: rgb(30, 29, 29);
+
+}
+@media (max-width:400px)
+{
+    .dibbi{
+        width: 18rem;
+    }
+}
+.dibbi::before {
+    content: '';
+    position: absolute;
+    top: -1.5px;
+    left: -1.5px;
+    right: -1.5px;
+    bottom: -1.5px;
+    background: linear-gradient(165deg, rgb(0, 0, 0), rgb(0, 0, 0), rgb(106, 106, 216), rgb(172, 82, 82),black ,black);
+    border-radius: inherit;
+    z-index: -1;
+    animation: backgrounda 3s infinite ease-in-out;
+     background-size: 200% 200%;/* Ensure the gradient is large enough to animate smoothly */
+  }
+
+  @keyframes backgrounda {
+    0% {
+      background-position: 0% 50%; /* Starting position of the gradient */
+    }
+    50% {
+      background-position: 100% 50%; /* Midpoint position of the gradient */
+    }
+    100% {
+      background-position: 0% 50%; /* Final position of the gradient */
+    }
+  }
+
+.grid_text{
+    font-size: 1.5rem;
+    background-color: rgb(30, 29, 29);
+    font-weight: 1000;
+}
+
+@media(max-width:1332px){
+    .grid_box{
+        
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width:895px){
+    .grid_box,.intro_box,.header_box{
+        width: 100%;
+    }
+}
+@media(max-width:720px){
+    .grid_box{
+        
+    grid-template-columns: repeat(1,1fr);
+    }
+    .girl_box{
+        display: none;
+    }
+    .intro_content_box{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        width: 80% ;
+        
+    }
+    .footer_box{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+.mini_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mini_box{
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 25rem;
+    border: 1px solid red;
+    box-shadow: 0 0 0.5rem red;
+    border-radius: 2rem;
+    margin-bottom: 5rem; 
+    margin-top: 2rem;
+    position: relative;
+
+}
+@media(max-width:505px){
+    .ima{
+        display: none;
+    }
+    .mini_box{
+        width: 20rem;
+    }
+}
+.mini-photo{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    border: 1px solid white;
+    object-fit: cover;
+    position: absolute;
+    transition: all 0.2s linear 0s;
+}
+.mini-photo:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+.img11{
+    left: 0;
+}
+.img10{
+    left: 1.2rem;
+}
+.img9{
+    left: 2.4rem;
+}
+.img8{
+    left: 3.6rem;
+}
+.img7{
+    left: 4.8rem;
+}
+.img6{
+    left: 6rem;
+}
+.img5{
+    left: 7.2rem;
+}
+.mini_div{
+    width: 10rem;
+    height: 3rem;
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -1rem;
+    position: relative;
+}
+.mini_photo{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+}
+
+.explore_head,.explore_para{
+    background-color: rgb(39, 37, 37);
+    color: rgb(221, 207, 216);
+}
+.explore_head{
+    font-size: 1.2rem;
+    text-shadow: -0.5rem -0.5rem 1rem rgb(229, 63, 13);
+    
+}
+.explore_div{
+    width: 18rem;
+   
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 4;
+    top: 2.5rem;
+    background-color: rgb(39, 37, 37);
+    padding: 1rem;
+    border-radius:1.5rem;
+    left: 40%;
+    gap: 1rem;
+    display: none;
+}
+
+
+.extra_stuff_container{
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.1rem;
+    gap: 1.5rem;
+    height: 500px;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0.9;
+    font-family: 'Roboto', Arial, sans-serif;
+    display: none;
+}
+.nav_text2{
+    transition: 0.2s ease-in-out ;
+}
+.nav_text2:hover{
+    color: blue;
+}
+
+.login_box2{
+    border: 1.5px solid red;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem red;
+}
+.login_box2:hover{
+    color: rgb(158, 56, 9);
+}
+.login2:hover{
+  color: rgb(158, 56, 9);
+}
+
+.footer_container{
+    width: 100%;
+    margin-top: 10rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_box{
+    width: 80%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:550px){
+    .footer_container{
+        height: auto;
+    }
+    .footer_box{
+        width: 100%;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+
+.main_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.maina{
+    width: 80%;
+    margin: 1rem 0;
+    height: 30rem;
+    border: 2px solid yellow;
+    border-radius: 2rem;
+}
+.main_box{
+    
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    position: relative;
+    
+    transition: 0.2s ease ;
+    border-radius: 2rem;
+}
+.light_effect{
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 10rem;
+    left: 10rem;
+    background: radial-gradient(ellipse at center, white 50%, transparent 100%);
+    opacity: 0.6;
+    display: none;
+    pointer-events: none;
+    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+    
+
+
+
+.left_div{
+    width: 48%;
+    padding: 1rem 3rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+
+}
+.right_div{
+    width: 48%;
+    padding: 1rem 1rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   overflow:auto;
+   scrollbar-width: none;
+}
+.right_div::-webkit-scrollbar {
+    display: none; /* Chrome: Hide scrollbar */
+}
+.last-div{
+    width:90%;
+    height: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   animation: slide 5s linear infinite;;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    100% {
+        transform: translateY(-50%); /* End position: content moves completely left */
+    }
+}
+
+.last{
+    
+    object-fit: scale-down;
+    height: 11rem;
+    width: 20rem;
+}
+
+@media (max-width:780px) {
+
+    .maina{
+        width: 90%;
+        margin: 1rem 0;
+        height: 60rem;
+        border: 2px solid yellow;
+        border-radius: 2rem;
+    }
+    .main_box{
+        width: 100%;
+        height: 60rem;
+        display: flex;
+        justify-content:  center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        transition: 0.2s ease ;
+        border-radius: 2rem;
+        gap: 1rem;
+    }
+    
+    
+    
+    .left_div{
+        width: 80%;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+    
+    }
+    .right_div{
+        
+        width: 80%;
+        padding: 1rem 1rem;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       
+       overflow:auto;
+       scrollbar-width: none;
+       padding: 0;
+        margin: 0;
+    }
+    .right_div::-webkit-scrollbar {
+        display: none; /* Chrome: Hide scrollbar */
+    }
+    .last-div{
+        width:90%;
+        height: 100%;
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+       animation: slide 5s linear infinite;;
+    }
+  
+    
+}
+.who_are{
+    color: yellow;
+    font-weight: bold;
+    font-size: large;
+}
+.Unveil{
+   color: gray
+}
+.Lets{
+    border: 1px solid white;
+    background-color: rgb(121, 121, 236);
+    width: 7rem;
+    text-align: center;
+    padding: 0.4rem 0;
+    border-radius: 2rem;
+}
+.Lets:hover{
+    background-color: rgb(81, 81, 239);
+}
+
+@media (min-width:500px) {
+
+    .header_container{
+
+        box-shadow: 0 0rem 1rem rgb(130, 130, 230);
+    }
+    .footer_container{
+
+        box-shadow: 0 0 1rem red;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    <div class="fader">
+        <div class="logo_box ">
+            <div class="logo_gif ">
+                <video class="vid" autoplay muted loop  src="Screen Recording 2024-12-24 105211.mp4"></video>
+            </div>
+            <div class="logo_text ">
+                <h2 class="logo_text_heading">CODEHELP</h2>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="explore_div">
+        <a href="#" class="explore_headd">
+            <h2 class="explore_head">
+                DevChallenges
+            </h2>
+            <p class="explore_para">
+                Complete your challenges and upscale your skill
+            </p>
+        </a>
+        <a href="#" class="explore_headd">
+            <h2 class="explore_head">
+                Fruitbox Flex
+            </h2>
+            <p class="explore_para">
+                A fun and interactive way to sharpen your Flexbox CSS skill
+            </p>
+        </a>
+        <a href="#" class="explore_headd">
+            <h2 class="explore_head">
+                Quick Compiler
+            </h2>
+            <p class="explore_para">
+                Write and run your code in multiple language from anywhere
+            </p>
+        </a>
+        <a href="#" class="explore_headd">
+            <h2 class="explore_head">
+                Core Subjects
+            </h2>
+            <p class="explore_para">
+                Demystify CS topic with our easy to unerstand topics
+            </p>
+        </a>
+        <a href="#" class="explore_headd">
+            <h2 class="explore_head">
+                Mock Tests
+            </h2>
+            <p class="explore_para">
+                Prepare for success with our interview kits
+            </p>
+        </a>
+
+
+
+
+
+    </div>
+
+    <div class="header_container">
+        <div class="header_box">
+            <div class="logo_box">
+                <div class="logo_gif">
+                    <video class="vid" autoplay muted loop  src="Screen Recording 2024-12-24 105211.mp4"></video>
+                </div>
+                <div class="logo_text">
+                    <h2 class="logo_text_heading">CODEHELP</h2>
+                </div>
+            </div>
+            <div class="nav_box">
+
+                <div class="nav">
+                    <a href="#" class="nav_text">Home</a>
+                    <div class="nav_div"></div>
+                </div>
+                <div class="nav">
+                    <a href="#" class="nav_text">Courses</a>
+                    <div class="nav_div"></div>
+                </div>
+                <div class="nav " id="idiot">
+                    <a href="#" class="nav_text ">Explore↓</a>
+                    <div class="nav_div "></div>
+                </div>
+                <div class="nav">
+                    <a href="#" class="nav_text">Contact</a>
+                    <div class="nav_div"></div>
+                </div>
+                <div class="nav">
+                    <a href="#" class="nav_text">Articles</a>
+                    <div class="nav_div"></div>
+                </div>
+                <div class="nav">
+                    <a href="#" class="nav_text">Tutorials</a>
+                    <div class="nav_div"></div>
+                </div>
+                
+
+            </div>
+            <div class="login_box">
+
+                <a class="Login" href="#">Login</a>
+
+            </div>
+            <div class="menu_box">
+                <a href="#" >
+                    <img class="menu_img" src="3.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro_container">
+        <div class="intro_box">
+            <div class="boy_box">
+                <img src="1 (8).png" alt="" class="boy">
+            </div>
+            <div class="intro_content_box">
+                <img src="1 (4).png" alt="" class="img1 ima">
+                <img src="1 (6).png" alt="" class="img2 ima">
+                <img src="1 (5).png" alt="" class="img3 ima">
+                <img src="1 (7).png" alt="" class="img4 ima">
+                <div class="intro_content_text">
+                    <h1 class="intro_heading">Welcome to CodeHelp</h1>
+                    <h2 class="intro_heading2">
+                        <span>Learn </span><span class="YOOY">Web Development</span> <span class="typed-cursor">|</span>                 </h2>
+                    <div class="dabba">
+                        <a class="Course_button" href="#">View Courses</a>
+                        <a class="Watch_button" href="#">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class="girl_box">
+                <img src="1 (1).png" alt="" class="girl">
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="grid_container">
+        <div class="grid_box">
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Free Web Dev </h1>
+            </a>
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Quick Compiler </h1>
+            </a>
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Tutorials </h1>
+            </a>
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Dev Challenges </h1>
+            </a>
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Interview Expriences </h1>
+            </a>
+            <a href="#" class="dibbi">
+                <h1 class="grid_text"> Mock Test </h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="mini_container">
+        <div class="mini_box">
+            <div class="mini_div">
+
+                <a href="#" class="mini_photo">
+                    <img src="4 (1).webp" alt="" class="mini-photo img11">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (2).webp" alt="" class="mini-photo img10">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (3).webp" alt="" class="mini-photo img9">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (4).webp" alt="" class="mini-photo img8">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (5).webp" alt="" class="mini-photo img7">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (6).webp" alt="" class="mini-photo img6">
+                </a>
+                <a href="#" class="mini_photo">
+                    <img src="4 (7).webp" alt="" class="mini-photo img5">
+                </a>
+
+            </div>
+            <h3 clas="mini_text">70,000+ Happy Students</h3>
+        </div>
+    </div>
+
+    <div class="extra_stuff_container">
+        <div class="nav2">
+            <a href="#" class="nav_text2">Home</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Courses</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2" >
+            <a href="#" class="nav_text2 ">Quick Compiler</a>
+            <div class="nav_div2 "></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Contact</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Articles</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Tutorials</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Mock Tests</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">DevChallenge</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="nav2">
+            <a href="#" class="nav_text2">Fruitbox Flex</a>
+            <div class="nav_div2"></div>
+        </div>
+        <div class="login_box2">
+
+            <a class="Login2" href="#">Login</a>
+
+        </div>
+    </div>
+    
+    <div class="main_container">
+        <div class="maina">
+            <div class="main_box">
+                <div class="light_effect">
+                </div>
+                <div class="left_div">
+    
+                    <h5 class="who_are">Who are we</h5>
+                    <h1 class="empower">Empowering Coders, Enabling Dreams </h1>
+                    <p class="Unveil">Unveil the essence of CodeHelp: a community-driven platform dedicated to empowering coders of all levels. Discover who we are and how we're shaping the future of coding education.</p>
+                    <a class="Lets" href="#">Let's Connect</a>
+                </div>
+                <div class="right_div">
+    
+                    <div class="last-div" >
+                        <img class="last" src="2 (1).png" alt="">
+                        <img class="last" src="2 (2).png" alt="">
+                        <img class="last" src="2 (3).png" alt="">
+                        
+                    </div>
+                       
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_container">
+        <div class="footer_box">
+            <p>
+                Copyright © 2024 Sorting Code Help Technologies Pvt Ltd. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+    
+
+    <script >
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    
+document.addEventListener('animationend',function shiv(event){
+    if (event.animationName === "fadeAndGrow"){
+        const element=document.querySelector('.fader');
+        element.style.display='none';
+    }
+      
+});
+
+const change=document.querySelector('.YOOY');
+change.style.color='blue';
+const arr = [
+    'P', 'PY', 'PYT', 'PYTH', 'PYTHO', 'PYTHON', 'PYTHON', 'PYTHON', 'PYTHON', 'PYTHON', 'PYTHON', 'PYTHON', 'PYTHON',
+    'J', 'JA', 'JAV', 'JAVA', 'JAVA', 'JAVA', 'JAVA', 'JAVA', 'JAVA', 'JAVA', 'JAVA',
+    'C', 'C+', 'C++', 'C++', 'C++', 'C++', 'C++', 'C++', 'C++', 'C++',
+    '', 'D', 'DS', 'DSA', 'DSA', 'DSA', 'DSA', 'DSA', 'DSA', 'DSA', 'DSA',
+    '', 'M', 'Ma', 'Mac', 'Mach', 'Machi', 'Machin', 'Machine', 'Machine ', 'Machine L', 'Machine Le', 'Machine Lea', 'Machine Lear',
+    'Machine Learn', 'Machine Learni', 'Machine Learnin', 'Machine Learning', 'Machine Learning', 'Machine Learning', 'Machine Learning',
+    'Machine Learning', 'Machine Learning', 'Machine Learning', 'Machine Learning',
+    '', 'W', 'We', 'Web', 'Web D', 'Web De', 'Web Dev', 'Web Deve', 'Web Devel', 'Web Develo', 'Web Develop',
+    'Web Developm', 'Web Developme', 'Web Developmen', 'Web Development', 'Web Development', 'Web Development', 'Web Development',
+    'Web Development', 'Web Development'
+];
+
+let index=0;
+
+setInterval(function changef(){
+
+    change.textContent=arr[index];
+    index=(index+1)%arr.length;
+
+},100);
+let idit = document.querySelector('#idiot');
+let exploreDiv = document.querySelector('.explore_div');
+
+// Show the div on mouseover
+idit.addEventListener('mouseover', function () {
+    exploreDiv.style.display = 'flex'; // Or 'block' depending on your layout
+});
+
+// Hide the div on mouseout
+idit.addEventListener('mouseout', function () {
+    exploreDiv.style.display = 'none';
+});
+exploreDiv.addEventListener('mouseover', function () {
+    exploreDiv.style.display = 'flex'; // Or 'block' depending on your layout
+});
+
+// Hide the div on mouseout
+exploreDiv.addEventListener('mouseout', function () {
+    exploreDiv.style.display = 'none';
+});
+
+
+const cross=document.querySelector('.menu_img');
+const menuButton=document.querySelector('.extra_stuff_container');
+cross.addEventListener('click', function xyz(){
+    if(menuButton.style.display==='none'){
+        cross.src='5.png';
+        menuButton.style.display='flex';
+    }
+    else{
+        cross.src='3.png';
+        menuButton.style.display='none';
+    }
+    
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mainBox = document.querySelector('.main_box');
+const light=document.querySelector('.light_effect');
+
+        mainBox.addEventListener('mousemove', (e) => {
+            const rect = mainBox.getBoundingClientRect();
+            const x = e.clientX - rect.left; // X position relative to the element
+            const y = e.clientY - rect.top;  // Y position relative to the element
+            light.style.display='block';
+            light.style.left = `${x - light.offsetWidth / 2}px`; // Subtract half of the light's width
+            light.style.top = `${y - light.offsetHeight / 2}px`;
+            // Map the x and y positions to rotation angles
+            const rotateY = ((x / rect.width) - 0.5) * 5; // Rotate up to ±10 degrees
+            const rotateX = ((y / rect.height) - 0.5) * -5; // Inverse rotation for natural feel
+
+            mainBox.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        mainBox.addEventListener('mouseleave', () => {
+            light.style.display='none';
+            // Reset the transformation when the mouse leaves
+            mainBox.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg) ';
+        });
+
+
+})
+
+
+
+
+    </script>
+</body>
+</html>

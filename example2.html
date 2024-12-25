@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Style for the text */
+#text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style for the blinking cursor */
+.typed-cursor {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  animation: blink 1s step-end infinite;
+}
+
+/* Keyframe for cursor blinking */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="text-container">
+    <span id="text">Hello</span><span class="typed-cursor">|</span>
+  </div>  
+  <script>
+    const textElement = document.getElementById('text');
+const phrases = ['Hello', 'Welcome', 'To', 'The', 'World'];
+let index = 0;
+let currentText = '';
+let isErasing = false;
+let charIndex = 0;
+
+function typeText() {
+  if (!isErasing && charIndex < phrases[index].length) {
+    currentText += phrases[index][charIndex];
+    charIndex++;
+    textElement.textContent = currentText;
+  } else if (isErasing && charIndex > 0) {
+    currentText = currentText.slice(0, -1);
+    charIndex--;
+    textElement.textContent = currentText;
+  }
+
+  if (charIndex === phrases[index].length) {
+    isErasing = true; // Start erasing after typing is done
+  } else if (isErasing && charIndex === 0) {
+    isErasing = false; // Stop erasing, move to the next phrase
+    index = (index + 1) % phrases.length; // Loop through phrases
+  }
+}
+
+// Type or erase text every 100ms
+setInterval(typeText, 100);
+
+  </script>
+</body>
+</html>

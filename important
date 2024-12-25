@@ -1,0 +1,103 @@
+const textElement = document.getElementById('text');
+const phrases = ['Hello', 'Welcome', 'To', 'The', 'World'];
+let index = 0;
+let currentText = '';
+let isErasing = false;
+let charIndex = 0;
+
+function typeText() {
+  if (!isErasing && charIndex < phrases[index].length) {
+    currentText += phrases[index][charIndex];
+    charIndex++;
+    textElement.textContent = currentText;
+  } else if (isErasing && charIndex > 0) {
+    currentText = currentText.slice(0, -1);
+    charIndex--;
+    textElement.textContent = currentText;
+  }
+
+  if (charIndex === phrases[index].length) {
+    isErasing = true; // Start erasing after typing is done
+  } else if (isErasing && charIndex === 0) {
+    isErasing = false; // Stop erasing, move to the next phrase
+    index = (index + 1) % phrases.length; // Loop through phrases
+  }
+}
+
+// Type or erase text every 100ms
+setInterval(typeText, 100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      background: linear-gradient(155deg,black, #531a05, #241298, black);
+      background-size: 400% 400%;
+      animation: backgroundShift 1s infinite;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1>Animated Background</h1>
+</body>
+</html>
